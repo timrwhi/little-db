@@ -2,11 +2,20 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = process.env.NODE_ENV === 'production' ? 80 : 3000;
-
 app.use(bodyParser.json({ type: '*/*' }));
 
 const db = {};
+
+app.get('/', (req, res) => {
+  res.type('text/html');
+  res.send(`
+    <h1>Endpoints:</h1>
+    <pre>GET    /comments</pre>
+    <pre>GET    /comments/:id</pre>
+    <pre>POST   /comments</pre>
+    <pre>DELETE /comments/:id</pre>
+  `);
+});
 
 app.get('/comments', (req, res) => {
   const comments = Object.values(db);
@@ -33,4 +42,5 @@ app.delete('/comments/:id', (req, res) => {
   res.send(db);
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+const port = process.env.NODE_ENV === 'development' ? 3000 : undefined;
+app.listen(port);
