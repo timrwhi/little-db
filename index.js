@@ -43,4 +43,7 @@ app.delete('/comments/:id', (req, res) => {
 });
 
 const port = process.env.NODE_ENV === 'development' ? 3000 : undefined;
-app.listen(port);
+app.listen(
+  port,
+  () => port && console.log(`\nRunning on http://localhost:${port}`)
+);

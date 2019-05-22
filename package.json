@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "watch": "NODE_ENV=development nodemon index.js"
+    "serve": "NODE_ENV=development nodemon index.js",
+    "deploy": "now"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "now": "^15.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
