@@ -13,9 +13,3 @@ GET    /comments/:id
 POST   /comments
 DELETE /comments/:id
 ```
-
-## Deploy
-Deploy using [now.sh](https://zeit.co/now)
-```
-$ yarn deploy
-```

@@ -12,7 +12,9 @@ app.get('/', (req, res) => {
     <h1>Endpoints:</h1>
     <pre>GET    /comments</pre>
     <pre>GET    /comments/:id</pre>
-    <pre>POST   /comments</pre>
+    <pre>POST   /comments
+       { id: string }
+    </pre>
     <pre>DELETE /comments/:id</pre>
   `);
 });
@@ -30,7 +32,7 @@ app.get('/comments/:id', (req, res) => {
 
 app.post('/comments', (req, res) => {
   const post = req.body;
-  if (!post || !post.id) res.sendStatus(400);
+  if (!post || !post.id) return res.status(400).send('Missing id');
   db[post.id] = post;
   res.send(post);
 });

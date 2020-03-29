@@ -1,19 +1,17 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "A tiny, in-memory, node.js-based key/value store with some REST endpoints.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "serve": "NODE_ENV=development nodemon index.js",
-    "deploy": "now"
+    "serve": "NODE_ENV=development nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "now": "^15.3.0"
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
